@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Generated Responses</title>
+    <link rel="stylesheet" href="/static/all_response_style.css">
+</head>
+<body>
+    <header>
+        <h1>Fertilizer Impact Prediction</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/predict">Prediction</a></li>
+                <li><a href="/all_responses" class="active">View All Predictions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="responses">
+            <h2>All Generated Responses</h2>
+            
+            {% if predictions %}
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SN</th>
+                            <th>Soil</th>
+                            <th>Weather</th>
+                            <th>Fertilizer</th>
+                            <th>Amount (kg)</th>
+                            <th>Crop</th>
+                            <th>Predicted Yield, Impact And Description</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prediction in predictions %}
+                        <tr>
+                            <td>{{loop.index}}.</td>
+                            <td>{{ prediction['soil'] }}</td>
+                            <td>{{ prediction['weather'] }}</td>
+                            <td>{{ prediction['fertilizer'] }}</td>
+                            <td>{{ prediction['amount'] }}</td>
+                            <td>{{ prediction['crop'] }}</td>
+                            <td>{{ prediction['predicted_yield'] }}</td>
+                            <td>{{ prediction['description'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="no-data">
+                <p>No data available. Please make a prediction first.</p>
+            </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fertilizer Impact Prediction</p>
+    </footer>
+</body>
+</html>

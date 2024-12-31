@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Impact Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Fertilizer Impact Prediction</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/predict">Prediction</a></li>
+                <li><a href="/all_responses">View All Predictions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="/predict" method="POST">
+        <fieldset>
+            <legend>Enter Details for Prediction</legend>
+            
+            <label for="soil">Soil Type</label>
+            <select name="soil" id="soil" required>
+                <option value="" disabled selected>Select Soil Type</option>
+                <option value="Loamy">Loamy</option>
+                <option value="Sandy">Sandy</option>
+                <option value="Clay">Clay</option>
+                <option value="Silty">Silty</option>
+                <option value="Peaty">Peaty</option>
+            </select>
+
+            <label for="weather">Weather Condition</label>
+            <select name="weather" id="weather" required>
+                <option value="" disabled selected>Select Weather</option>
+                <option value="Sunny">Sunny</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Cloudy">Cloudy</option>
+                <option value="Windy">Windy</option>
+                <option value="Humid">Humid</option>
+            </select>
+
+            <label for="fertilizer">Fertilizer Type</label>
+            <select name="fertilizer" id="fertilizer" required>
+                <option value="" disabled selected>Select Fertilizer Type</option>
+                <option value="Nitrogen-based">Nitrogen-based</option>
+                <option value="Phosphorus-based">Phosphorus-based</option>
+                <option value="Potassium-based">Potassium-based</option>
+                <option value="Organic">Organic</option>
+                <option value="Composite">Composite</option>
+            </select>
+
+            <label for="amount">Fertilizer Amount (kg)</label>
+            <input type="number" name="amount" id="amount" min="1" step="0.1" placeholder="Enter amount in kg/ha" required >
+
+            <label for="crop">Crop Type</label>
+            <select name="crop" id="crop" required>
+                <option value="" disabled selected>Select Crop Type</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Rice">Rice</option>
+                <option value="Corn">Corn</option>
+                <option value="Soybean">Soybean</option>
+                <option value="Cotton">Cotton</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </fieldset>
+    </form>
+
+    {% if result %}
+    <div class="results">
+        <h3>Prediction Results:</h3>
+        <p><strong>Predicted Yield and Fertilizer Effect:</strong> {{ result['yield'] }}</p>
+        <p><strong>Generated Source:</strong> {{ result['description'] }}</p>
+        <a href="/prediction">Click here for more details</a>
+    </div>
+    {% elif error %}
+    <div class="error">
+        <h3>Error:</h3>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>

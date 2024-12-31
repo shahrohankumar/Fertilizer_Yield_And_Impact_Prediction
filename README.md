@@ -1,2 +1,0 @@
-# Fertilizer_Imapct_Prediction
-Flask_App+For_Fertilizer_Yeild_Prediction

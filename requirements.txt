@@ -1,0 +1,7 @@
+```plaintext
+flask
+pandas
+numpy
+scikit-learn
+requests
+sqlite3

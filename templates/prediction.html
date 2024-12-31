@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/prediction_style.css">
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p><strong>Predicted Yield:</strong> {{ result['yield'] }} tons/ha</p>
+    
+    <h2>Proper Formatted Result/Output:</h2>
+    <pre>{{ result['raw_response'] }}</pre>
+    <a href="/" class="button">Generate New Result</a>
+</body>
+</html>
