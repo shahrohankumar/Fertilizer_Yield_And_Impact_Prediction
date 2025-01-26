@@ -101,11 +101,7 @@ def predict_yield_with_gemini(soil, weather, fertilizer, amount, crop):
 # Routes
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-@app.route('/developer')
-def developer():
-    return render_template('developer.html')   
+    return render_template('index.html')  
 
 @app.route('/about')
 def about():
