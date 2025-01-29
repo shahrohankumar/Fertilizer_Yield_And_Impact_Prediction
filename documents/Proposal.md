@@ -58,4 +58,4 @@ A web-based platform that predicts fertilizer impact, suggests optimal fertilize
 ---
 
 ## Team Members
-- Khelendra Rauniyar
+- Rohan Sah
