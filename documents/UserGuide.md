@@ -35,4 +35,4 @@ This guide explains how to use the Fertilizer Impact Prediction platform to pred
 
 ## Contact
 For assistance, reach out to:
-- **Email**: [khelendra71412@gmail.com]
+- **Email**: [Rohansah@gmail.com]
