@@ -24,7 +24,7 @@ A machine learning-based web application designed to predict the impact of ferti
 ## Installation and Setup
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Khelendrarauniyar/Fertilizer_Imapct_Prediction.git
+   git clone https://github.com/rohansah/Fertilizer_Imapct_Prediction.git
 
 Navigate to the project directory:
 
@@ -72,8 +72,8 @@ License
 This project is licensed under the MIT License.
 
 Contact
-Khelendra Rauniyar
+Rohan Sah
 
 GitHub
 LinkedIn
-Email: Khelendra71412@gmail.com
+Email: rohansah@gmail.com
